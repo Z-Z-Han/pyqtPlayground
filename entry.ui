@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1016</width>
+    <height>819</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QListWidget" name="listWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:rgb(221, 255, 247);</string>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+      <item>
+       <property name="text">
+        <string>断路器多参数估计</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>断路器快速估计</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>变换器多参数估计</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>变换器快速估计</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item>
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>4</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 250, 229);</string>
+      </property>
+      <property name="currentIndex">
+       <number>3</number>
+      </property>
+      <widget class="QWidget" name="page_0">
+       <layout class="QGridLayout" name="gridLayout_2">
+        <item row="1" column="2">
+         <widget class="QLabel" name="label_2">
+          <property name="text">
+           <string>电感参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="2" colspan="3">
+         <layout class="QFormLayout" name="formLayout_2">
+          <item row="0" column="0">
+           <widget class="QLabel" name="iALabel">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="iALineEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lHLabel">
+            <property name="text">
+             <string>电感容量L(μH)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lHLineEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="n1Label">
+            <property name="text">
+             <string>硅铁磁粉芯个数N1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="n1LineEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="nLabel">
+            <property name="text">
+             <string>线材股数N2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="nLineEdit"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="nLabel_2">
+            <property name="text">
+             <string>匝数n</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="nLineEdit_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="0">
+         <widget class="QLabel" name="label_4">
+          <property name="text">
+           <string>整流管参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0">
+         <widget class="QChartView" name="graphicsView"/>
+        </item>
+        <item row="2" column="2" colspan="3">
+         <layout class="QFormLayout" name="formLayout_5">
+          <item row="0" column="0">
+           <widget class="QLabel" name="Label_3">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="LineEdit_3"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="Label_4">
+            <property name="text">
+             <string>体积V(mm³)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="LineEdit_4"/>
+          </item>
+         </layout>
+        </item>
+        <item row="3" column="3" colspan="2">
+         <widget class="QLabel" name="label_5">
+          <property name="text">
+           <string>散热器参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0">
+         <layout class="QFormLayout" name="formLayout_3">
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="iALineEdit_2"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="dMmLabel_2">
+            <property name="text">
+             <string>直径D（mm）</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="dMmLineEdit_2"/>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="LineEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="Label">
+            <property name="text">
+             <string>引线长度（mm）</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="0">
+           <widget class="QLabel" name="iALabel_2">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label">
+          <property name="text">
+           <string>电容参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <layout class="QFormLayout" name="formLayout">
+          <item row="0" column="0">
+           <widget class="QLabel" name="uVLabel">
+            <property name="text">
+             <string>电压U(V)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="uVLineEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="cFLabel">
+            <property name="text">
+             <string>电容C(μF)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="cFLineEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="dMmLabel">
+            <property name="text">
+             <string>直径D(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="dMmLineEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="lMLabel">
+            <property name="text">
+             <string>长度L(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lMLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="1">
+         <layout class="QFormLayout" name="formLayout_4">
+          <item row="0" column="0">
+           <widget class="QLabel" name="iALabel_3">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="iALineEdit_3"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="dMmLabel_3">
+            <property name="text">
+             <string>直径D（mm）</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="dMmLineEdit_3"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="Label_2">
+            <property name="text">
+             <string>引线长度（mm）</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="LineEdit_2"/>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="1">
+         <widget class="QLabel" name="label_3">
+          <property name="text">
+           <string>晶闸管参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="1">
+         <widget class="QPushButton" name="pushButton">
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="1" colspan="4">
+         <widget class="QTableWidget" name="tableWidget"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_1">
+       <widget class="QWidget" name="formLayoutWidget_6">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>20</y>
+          <width>161</width>
+          <height>129</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_6">
+         <item row="0" column="0">
+          <widget class="QLabel" name="simpleBreakerVoltageLabel">
+           <property name="text">
+            <string>电压U(V)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="simpleBreakerVoltageLineEdit"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="simpleBreakerCurrentLabel">
+           <property name="text">
+            <string>电流I(A)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="simpleBreakerCurrentLineEdit"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="simpleBreakerCapacitorLabel">
+           <property name="text">
+            <string>电容C(μF)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="simpleBreakerCapacitorLineEdit"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="simpleBreakerIndutanceLabel">
+           <property name="text">
+            <string>电感L(μH)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="simpleBreakerIndutanceLineEdit"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_2">
+        <property name="geometry">
+         <rect>
+          <x>60</x>
+          <y>180</y>
+          <width>112</width>
+          <height>34</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>确定</string>
+        </property>
+       </widget>
+       <widget class="QChartView" name="graphicsView_2">
+        <property name="geometry">
+         <rect>
+          <x>290</x>
+          <y>10</y>
+          <width>301</width>
+          <height>231</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_2">
+        <property name="geometry">
+         <rect>
+          <x>40</x>
+          <y>270</y>
+          <width>551</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+      <widget class="QWidget" name="page_2">
+       <layout class="QGridLayout" name="gridLayout">
+        <item row="1" column="3">
+         <widget class="QLabel" name="label_8">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="text">
+           <string>电感参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="3">
+         <widget class="QLabel" name="label_9">
+          <property name="text">
+           <string>散热器参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="0" column="3">
+         <layout class="QFormLayout" name="formLayout_11">
+          <item row="0" column="0">
+           <widget class="QLabel" name="iALabel_4">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="iALineEdit_4"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="lHLabel_2">
+            <property name="text">
+             <string>电感容量L(μH)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lHLineEdit_2"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="n1Label_2">
+            <property name="text">
+             <string>硅铁磁粉芯个数N1</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="n1LineEdit_2"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="nLabel_3">
+            <property name="text">
+             <string>线材股数N2</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="nLineEdit_3"/>
+          </item>
+          <item row="4" column="0">
+           <widget class="QLabel" name="nLabel_4">
+            <property name="text">
+             <string>匝数n</string>
+            </property>
+           </widget>
+          </item>
+          <item row="4" column="1">
+           <widget class="QLineEdit" name="nLineEdit_4">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="3">
+         <layout class="QFormLayout" name="formLayout_12">
+          <item row="0" column="0">
+           <widget class="QLabel" name="Label_5">
+            <property name="text">
+             <string>电流I(A)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="LineEdit_5"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="Label_6">
+            <property name="text">
+             <string>体积V(mm³)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="LineEdit_6"/>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QFormLayout" name="formLayout_10">
+          <item row="0" column="0">
+           <widget class="QLabel" name="convertorC1VoltageLabel_4">
+            <property name="text">
+             <string>电压U(V)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="convertorC1VoltageLineEdit_4"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="convertorC1CcapacitorLabel_4">
+            <property name="text">
+             <string>电容C(μF)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="convertorC1CcapacitorLineEdit_4"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="convertorC1DiameterLabel_4">
+            <property name="text">
+             <string>直径D(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="convertorC1DiameterLineEdit_4"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="convertorC1LengthLabel_4">
+            <property name="text">
+             <string>长度l(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="convertorC1LengthLineEdit_4"/>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <layout class="QFormLayout" name="formLayout_7">
+          <item row="0" column="0">
+           <widget class="QLabel" name="convertorC1VoltageLabel">
+            <property name="text">
+             <string>电压U(V)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="0" column="1">
+           <widget class="QLineEdit" name="convertorC1VoltageLineEdit"/>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="convertorC1CcapacitorLabel">
+            <property name="text">
+             <string>电容C(μF)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="convertorC1CcapacitorLineEdit"/>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="convertorC1DiameterLabel">
+            <property name="text">
+             <string>直径D(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="convertorC1DiameterLineEdit"/>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="convertorC1LengthLabel">
+            <property name="text">
+             <string>长度l(mm)</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="convertorC1LengthLineEdit"/>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <widget class="QLabel" name="label_7">
+          <property name="text">
+           <string>电容C2参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="1" column="0">
+         <widget class="QLabel" name="label_6">
+          <property name="text">
+           <string>电容C1参数</string>
+          </property>
+          <property name="alignment">
+           <set>Qt::AlignCenter</set>
+          </property>
+         </widget>
+        </item>
+        <item row="4" column="1">
+         <widget class="QPushButton" name="pushButton_3">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="minimumSize">
+           <size>
+            <width>100</width>
+            <height>0</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>确定</string>
+          </property>
+         </widget>
+        </item>
+        <item row="5" column="0" colspan="4">
+         <widget class="Line" name="line">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+         </widget>
+        </item>
+        <item row="6" column="0">
+         <widget class="QChartView" name="graphicsView_3"/>
+        </item>
+        <item row="6" column="1" colspan="3">
+         <widget class="QTableWidget" name="tableWidget_3"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="page_3">
+       <widget class="QWidget" name="formLayoutWidget_12">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>20</y>
+          <width>164</width>
+          <height>163</height>
+         </rect>
+        </property>
+        <layout class="QFormLayout" name="formLayout_23">
+         <item row="0" column="0">
+          <widget class="QLabel" name="simpleConvertorVoltageLabel">
+           <property name="text">
+            <string>电压U(V)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="simpleConvertorVoltageLineEdit"/>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="simpleConvertorCurrentLabel">
+           <property name="text">
+            <string>电流I(A)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="simpleConvertorCurrentLineEdit"/>
+         </item>
+         <item row="2" column="0">
+          <widget class="QLabel" name="simpleConvertorCap1Label">
+           <property name="text">
+            <string>电容C1(μF)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="simpleConvertorCap1LineEdit"/>
+         </item>
+         <item row="3" column="0">
+          <widget class="QLabel" name="simpleConvertorCapperLabel">
+           <property name="text">
+            <string>电容C2(μF)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="simpleConvertorCap2LineEdit"/>
+         </item>
+         <item row="4" column="0">
+          <widget class="QLabel" name="simpleConvertorInductanceLabel">
+           <property name="text">
+            <string>电感L(μH)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="simpleConvertorInductanceLineEdit"/>
+         </item>
+        </layout>
+       </widget>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>190</y>
+          <width>112</width>
+          <height>34</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string>确定</string>
+        </property>
+       </widget>
+       <widget class="QChartView" name="graphicsView_5">
+        <property name="geometry">
+         <rect>
+          <x>270</x>
+          <y>20</y>
+          <width>301</width>
+          <height>231</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="QTableWidget" name="tableWidget_4">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>290</y>
+          <width>551</width>
+          <height>192</height>
+         </rect>
+        </property>
+       </widget>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1016</width>
+     <height>30</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QChartView</class>
+   <extends>QGraphicsView</extends>
+   <header location="global">PyQt5.QtChart.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>listWidget</sender>
+   <signal>currentRowChanged(int)</signal>
+   <receiver>stackedWidget</receiver>
+   <slot>setCurrentIndex(int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>165</x>
+     <y>225</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>262</x>
+     <y>230</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
